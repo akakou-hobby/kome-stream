@@ -26,8 +26,9 @@
 
     /* --- Get Comment ---- */
     socket.on('chat', function (msg) {
-      var list = document.createElement('li');
+      var list = document.createElement('Marquee');
       list.textContent = msg;
+      list.loop = 1;
       messages.appendChild(list);
     });
   }
