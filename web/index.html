@@ -26,9 +26,12 @@
 
     /* --- Get Comment ---- */
     socket.on('chat', function (msg) {
+      var randnum = 20 + Math.floor( Math.random() * 61 );
       var list = document.createElement('Marquee');
       list.textContent = msg;
       list.loop = 1;
+      list.style.position = "absolute"
+      list.style.bottom = randnum.toString() + "%"
       messages.appendChild(list);
     });
   }
@@ -38,9 +41,9 @@
 <!-- html body source-->
 <body>
   <ul id="messages"></ul>
-  <form id='form' style='position:fixed; bottom:10%; width: 100%;'>
-    <input id="chat" style='width: 80%;'/>
-    <button>送信</button>
+  <form id='form' style='position:fixed; bottom:2%; width: 100%;'>
+    <input id="chat" style='width: 90%;'/>
+    <button style="width: 8%;">送信</button>
   </form>
   <script>chat()</script>
 </body>
