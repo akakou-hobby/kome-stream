@@ -3,7 +3,8 @@ This application run server */
 
 
 /* --- require --- */
-var app = require('express')();
+var express = require('express');
+var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var fs = require('fs');
@@ -27,3 +28,5 @@ server.on('listening', () => {
   console.log('listening on 8000');
 });
 server.listen(8000);
+
+app.use('/js', express.static(__dirname + '/web/js'));

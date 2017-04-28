@@ -4,44 +4,13 @@
   <meta charset="utf-8" />
   <title>Kome Stream</title>
   <script src="/socket.io/socket.io.js"></script>
-
-  <!-- chat js program -->
-  <script>
-  function chat(){
-    var socket = io();
-    var form = document.getElementById('form');
-    var chat = document.getElementById('chat');
-    var messages = document.getElementById('messages');
-
-    /* --- Send Comment --- */
-    form.addEventListener('submit', function (e) {
-      // stop sending form
-      e.preventDefault();
-
-      // ivent and send message
-      socket.emit('chat', chat.value);
-      // reset entry
-      chat.value = '';
-    });
-
-    /* --- Get Comment ---- */
-    socket.on('chat', function (msg) {
-      var randnum = 20 + Math.floor( Math.random() * 61 );
-      var list = document.createElement('Marquee');
-      list.textContent = msg;
-      list.loop = 1;
-      list.style.position = "absolute"
-      list.style.bottom = randnum.toString() + "%"
-      messages.appendChild(list);
-    });
-  }
-  </script>
+  <script src="/js/script.js"></script>
 </head>
 
 <!-- html body source-->
 <body>
   <iframe src="https://drive.google.com/file/d/0B4LGTDHD4o_6NUVlRlMtOXEwWm8/preview"
-  style="position:fixed; height: 95%; width: 100%;"></iframe>
+  style="position:fixed; height: 92%; width: 100%;"></iframe>
   <ul id="messages"></ul>
   <form id='form' style='position:fixed; bottom:2%; width: 100%;'>
     <input id="chat" style='width: 90%;'/>
