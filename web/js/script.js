@@ -18,11 +18,11 @@ function chat(){
   /* --- Get Comment ---- */
   socket.on('chat', function (msg) {
     var randnum = 20 + Math.floor( Math.random() * 61 );
-    var list = document.createElement('Marquee');
-    list.textContent = msg;
-    list.loop = 1;
-    list.style.position = "absolute"
-    list.style.bottom = randnum.toString() + "%"
-    messages.appendChild(list);
+    var comment = document.createElement('Marquee');
+    comment.textContent = msg;
+    comment.loop = 1;
+    comment.style.position = "absolute"
+    comment.style.bottom = randnum.toString() + "%"
+    messages.appendChild(comment);
   });
 }
